@@ -25,7 +25,7 @@ function getSqSegDist(p: ISimplifyObjectPoint,
 
     if (dx !== 0 || dy !== 0) {
 
-        const t: number = ((p.x - x) * dx + (p.y - y) * dy) / (dx * dx + dy * dy);
+        const t: number = ((p.x - x) * dx + (p.y - y) * dy) / getAddedSquares(dx, dy);
 
         if (t > 1) {
             x = p2.x;

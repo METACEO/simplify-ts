@@ -22,7 +22,7 @@ function getSqSegDistAP(p: ISimplifyArrayPoint,
 
     if (dx !== 0 || dy !== 0) {
 
-        const t = ((p[0] - x) * dx + (p[1] - y) * dy) / (dx * dx + dy * dy);
+        const t = ((p[0] - x) * dx + (p[1] - y) * dy) / getAddedSquaresAP(dx, dy);
 
         if (t > 1) {
             x = p2[0];

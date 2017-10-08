@@ -9,7 +9,7 @@ function getSqDist(p1, p2) {
 function getSqSegDist(p, p1, p2) {
     var x = p1.x, y = p1.y, dx = p2.x - x, dy = p2.y - y;
     if (dx !== 0 || dy !== 0) {
-        var t = ((p.x - x) * dx + (p.y - y) * dy) / (dx * dx + dy * dy);
+        var t = ((p.x - x) * dx + (p.y - y) * dy) / getAddedSquares(dx, dy);
         if (t > 1) {
             x = p2.x;
             y = p2.y;
