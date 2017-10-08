@@ -1,0 +1,5 @@
+# Exclude these from npm installs:
+benchmarks
+dist
+test
+tsconfig.json

@@ -1,0 +1,39 @@
+{
+  "name": "simplify-ts",
+  "version": "0.0.1",
+  "description": "Simplification of a 2D-polyline or a 3D-polyline.",
+  "main": "dist/index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "benchmark": "^2.1.4",
+    "faucet": "0.0.1",
+    "tape": "^4.8.0",
+    "typescript": "^2.5.3"
+  },
+  "scripts": {
+    "bench": "node ./benchmarks/1k-objectPoints.js && node ./benchmarks/1k-arrayPoints.js",
+    "build": "tsc",
+    "test": "node test/test.js | faucet"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/METACEO/simplify-ts.git"
+  },
+  "author": "James Allen",
+  "keywords": [
+    "ts",
+    "tsc",
+    "typescript",
+    "douglas",
+    "peucker",
+    "math",
+    "geometry",
+    "polyline",
+    "simplification"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/METACEO/simplify-ts/issues"
+  },
+  "homepage": "https://github.com/METACEO/simplify-ts#readme"
+}
