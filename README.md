@@ -29,7 +29,6 @@ const simplified_result = Simplify(points, tolerance, highQuality);
 Array-based point collections:
 
 ```typescript
-
 import {
     SimplifyAP,
     ISimplifyArrayPoint
