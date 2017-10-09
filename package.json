@@ -3,6 +3,7 @@
   "version": "0.0.2",
   "description": "Simplification of a 2D-polyline or a 3D-polyline.",
   "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
   "dependencies": {},
   "devDependencies": {
     "benchmark": "^2.1.4",
@@ -13,6 +14,7 @@
   "scripts": {
     "bench": "node ./benchmarks/1k-objectPoints.js && node ./benchmarks/1k-arrayPoints.js",
     "build": "tsc",
+    "prepublish": "npm run build",
     "test": "node test/test.js | faucet"
   },
   "repository": {

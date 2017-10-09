@@ -1,5 +1,5 @@
 # Exclude these from npm installs:
 benchmarks
-dist
+src
 test
 tsconfig.json
