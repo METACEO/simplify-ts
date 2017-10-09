@@ -1,4 +1,5 @@
 # Exclude these from npm installs:
+.gitignore
 benchmarks
 src
 test

@@ -152,3 +152,120 @@ t('just return the array-points if it has no points', function (t) {
     t.same(result, []);
     t.end();
 });
+
+var pointsLL = [
+    {longitude: 224.55, latitude: 250.15}, {longitude: 226.91, latitude: 244.19},
+    {longitude: 233.31, latitude: 241.45}, {longitude: 234.98, latitude: 236.06},
+    {longitude: 244.21, latitude: 232.76}, {longitude: 262.59, latitude: 215.31},
+    {longitude: 267.76, latitude: 213.81}, {longitude: 273.57, latitude: 201.84},
+    {longitude: 273.12, latitude: 192.16}, {longitude: 277.62, latitude: 189.03},
+    {longitude: 280.36, latitude: 181.41}, {longitude: 286.51, latitude: 177.74},
+    {longitude: 292.41, latitude: 159.37}, {longitude: 296.91, latitude: 155.64},
+    {longitude: 314.95, latitude: 151.37}, {longitude: 319.75, latitude: 145.16},
+    {longitude: 330.33, latitude: 137.57}, {longitude: 341.48, latitude: 139.96},
+    {longitude: 369.98, latitude: 137.89}, {longitude: 387.39, latitude: 142.51},
+    {longitude: 391.28, latitude: 139.39}, {longitude: 409.52, latitude: 141.14},
+    {longitude: 414.82, latitude: 139.75}, {longitude: 427.72, latitude: 127.30},
+    {longitude: 439.60, latitude: 119.74}, {longitude: 474.93, latitude: 107.87},
+    {longitude: 486.51, latitude: 106.75}, {longitude: 489.20, latitude: 109.45},
+    {longitude: 493.79, latitude: 108.63}, {longitude: 504.74, latitude: 119.66},
+    {longitude: 512.96, latitude: 122.35}, {longitude: 518.63, latitude: 120.89},
+    {longitude: 524.09, latitude: 126.88}, {longitude: 529.57, latitude: 127.86},
+    {longitude: 534.21, latitude: 140.93}, {longitude: 539.27, latitude: 147.24},
+    {longitude: 567.69, latitude: 148.91}, {longitude: 575.25, latitude: 157.26},
+    {longitude: 580.62, latitude: 158.15}, {longitude: 601.53, latitude: 156.85},
+    {longitude: 617.74, latitude: 159.86}, {longitude: 622.00, latitude: 167.04},
+    {longitude: 629.55, latitude: 194.60}, {longitude: 638.90, latitude: 195.61},
+    {longitude: 641.26, latitude: 200.81}, {longitude: 651.77, latitude: 204.56},
+    {longitude: 671.55, latitude: 222.55}, {longitude: 683.68, latitude: 217.45},
+    {longitude: 695.25, latitude: 219.15}, {longitude: 700.64, latitude: 217.98},
+    {longitude: 703.12, latitude: 214.36}, {longitude: 712.26, latitude: 215.87},
+    {longitude: 721.49, latitude: 212.81}, {longitude: 727.81, latitude: 213.36},
+    {longitude: 729.98, latitude: 208.73}, {longitude: 735.32, latitude: 208.20},
+    {longitude: 739.94, latitude: 204.77}, {longitude: 769.98, latitude: 208.42},
+    {longitude: 779.60, latitude: 216.87}, {longitude: 784.20, latitude: 218.16},
+    {longitude: 800.24, latitude: 214.62}, {longitude: 810.53, latitude: 219.73},
+    {longitude: 817.19, latitude: 226.82}, {longitude: 820.77, latitude: 236.17},
+    {longitude: 827.23, latitude: 236.16}, {longitude: 829.89, latitude: 239.89},
+    {longitude: 851.00, latitude: 248.94}, {longitude: 859.88, latitude: 255.49},
+    {longitude: 865.21, latitude: 268.53}, {longitude: 857.95, latitude: 280.30},
+    {longitude: 865.48, latitude: 291.45}, {longitude: 866.81, latitude: 298.66},
+    {longitude: 864.68, latitude: 302.71}, {longitude: 867.79, latitude: 306.17},
+    {longitude: 859.87, latitude: 311.37}, {longitude: 860.08, latitude: 314.35},
+    {longitude: 858.29, latitude: 314.94}, {longitude: 858.10, latitude: 327.60},
+    {longitude: 854.54, latitude: 335.40}, {longitude: 860.92, latitude: 343.00},
+    {longitude: 856.43, latitude: 350.15}, {longitude: 851.42, latitude: 352.96},
+    {longitude: 849.84, latitude: 359.59}, {longitude: 854.56, latitude: 365.53},
+    {longitude: 849.74, latitude: 370.38}, {longitude: 844.09, latitude: 371.89},
+    {longitude: 844.75, latitude: 380.44}, {longitude: 841.52, latitude: 383.67},
+    {longitude: 839.57, latitude: 390.40}, {longitude: 845.59, latitude: 399.05},
+    {longitude: 848.40, latitude: 407.55}, {longitude: 843.71, latitude: 411.30},
+    {longitude: 844.09, latitude: 419.88}, {longitude: 839.51, latitude: 432.76},
+    {longitude: 841.33, latitude: 441.04}, {longitude: 847.62, latitude: 449.22},
+    {longitude: 847.16, latitude: 458.44}, {longitude: 851.38, latitude: 462.79},
+    {longitude: 853.97, latitude: 471.15}, {longitude: 866.36, latitude: 480.77}
+];
+
+var simplifiedLL = [
+    {longitude: 224.55, latitude: 250.15}, {longitude: 267.76, latitude: 213.81},
+    {longitude: 296.91, latitude: 155.64}, {longitude: 330.33, latitude: 137.57},
+    {longitude: 409.52, latitude: 141.14}, {longitude: 439.60, latitude: 119.74},
+    {longitude: 486.51, latitude: 106.75}, {longitude: 529.57, latitude: 127.86},
+    {longitude: 539.27, latitude: 147.24}, {longitude: 617.74, latitude: 159.86},
+    {longitude: 629.55, latitude: 194.60}, {longitude: 671.55, latitude: 222.55},
+    {longitude: 727.81, latitude: 213.36}, {longitude: 739.94, latitude: 204.77},
+    {longitude: 769.98, latitude: 208.42}, {longitude: 779.60, latitude: 216.87},
+    {longitude: 800.24, latitude: 214.62}, {longitude: 820.77, latitude: 236.17},
+    {longitude: 859.88, latitude: 255.49}, {longitude: 865.21, latitude: 268.53},
+    {longitude: 857.95, latitude: 280.30}, {longitude: 867.79, latitude: 306.17},
+    {longitude: 859.87, latitude: 311.37}, {longitude: 854.54, latitude: 335.40},
+    {longitude: 860.92, latitude: 343.00}, {longitude: 849.84, latitude: 359.59},
+    {longitude: 854.56, latitude: 365.53}, {longitude: 844.09, latitude: 371.89},
+    {longitude: 839.57, latitude: 390.40}, {longitude: 848.40, latitude: 407.55},
+    {longitude: 839.51, latitude: 432.76}, {longitude: 853.97, latitude: 471.15},
+    {longitude: 866.36, latitude: 480.77}
+];
+
+var simplifiedHighQualityLL = [
+    {longitude: 224.55, latitude: 250.15}, {longitude: 267.76, latitude: 213.81},
+    {longitude: 296.91, latitude: 155.64}, {longitude: 330.33, latitude: 137.57},
+    {longitude: 409.52, latitude: 141.14}, {longitude: 439.6,  latitude: 119.74},
+    {longitude: 486.51, latitude: 106.75}, {longitude: 529.57, latitude: 127.86},
+    {longitude: 539.27, latitude: 147.24}, {longitude: 617.74, latitude: 159.86},
+    {longitude: 629.55, latitude: 194.6 }, {longitude: 671.55, latitude: 222.55},
+    {longitude: 727.81, latitude: 213.36}, {longitude: 739.94, latitude: 204.77},
+    {longitude: 769.98, latitude: 208.42}, {longitude: 784.2,  latitude: 218.16},
+    {longitude: 800.24, latitude: 214.62}, {longitude: 820.77, latitude: 236.17},
+    {longitude: 859.88, latitude: 255.49}, {longitude: 865.21, latitude: 268.53},
+    {longitude: 857.95, latitude: 280.3 }, {longitude: 867.79, latitude: 306.17},
+    {longitude: 858.29, latitude: 314.94}, {longitude: 854.54, latitude: 335.4 },
+    {longitude: 860.92, latitude: 343   }, {longitude: 849.84, latitude: 359.59},
+    {longitude: 854.56, latitude: 365.53}, {longitude: 844.09, latitude: 371.89},
+    {longitude: 839.57, latitude: 390.4 }, {longitude: 848.4,  latitude: 407.55},
+    {longitude: 839.51, latitude: 432.76}, {longitude: 853.97, latitude: 471.15},
+    {longitude: 866.36, latitude: 480.77}
+];
+
+t('simplifies latlong-points correctly with the given tolerance', function (t) {
+    var result = distribution.SimplifyLL(pointsLL, 5);
+    t.same(result, simplifiedLL);
+    t.end();
+});
+
+t('simplifies latlong-points correctly with the given tolerance and high quality', function (t) {
+    var result = distribution.SimplifyLL(pointsLL, 5, true);
+    t.same(result, simplifiedHighQualityLL);
+    t.end();
+});
+
+t('just return the latlong-points if it has only one point', function (t) {
+    var result = distribution.SimplifyLL([{longitude: 1, latitude: 2}]);
+    t.same(result, [{longitude: 1, latitude: 2}]);
+    t.end();
+});
+
+t('just return the object-points if it has no points', function (t) {
+    var result = distribution.SimplifyLL([]);
+    t.same(result, []);
+    t.end();
+});

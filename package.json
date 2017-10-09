@@ -12,7 +12,7 @@
     "typescript": "^2.5.3"
   },
   "scripts": {
-    "bench": "node ./benchmarks/1k-objectPoints.js && node ./benchmarks/1k-arrayPoints.js",
+    "bench": "node ./benchmarks/1k-objectPoints.js && node ./benchmarks/1k-arrayPoints.js && node ./benchmarks/1k-latlongPoints.js",
     "build": "tsc",
     "prepublish": "npm run build",
     "test": "node test/test.js | faucet"
