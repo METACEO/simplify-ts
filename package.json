@@ -1,6 +1,6 @@
 {
   "name": "simplify-ts",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Simplification of a 2D-polyline or a 3D-polyline.",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
