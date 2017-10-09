@@ -1,5 +1,6 @@
 # Exclude these from npm installs:
 .gitignore
+.idea
 benchmarks
 src
 test
