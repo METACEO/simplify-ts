@@ -6,10 +6,11 @@
   "typings": "dist/index.d.ts",
   "dependencies": {},
   "devDependencies": {
+    "@types/node": "^13.7.4",
     "benchmark": "^2.1.4",
     "faucet": "0.0.1",
     "tape": "^4.8.0",
-    "typescript": "^2.5.3"
+    "typescript": "^3.8.2"
   },
   "scripts": {
     "bench": "node ./benchmarks/1k-objectPoints.js && node ./benchmarks/1k-arrayPoints.js && node ./benchmarks/1k-latlongPoints.js",
